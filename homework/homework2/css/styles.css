@@ -13,7 +13,7 @@ body {
     
 h1 {
         font-family: "Times New Roman", Georgia, Serif;
-        font-size: 20em;
+        font-size: 10em;
         text-align: center;
         
     }
@@ -24,10 +24,12 @@ h1 {
         width:600px;
         margin:0 auto;
         padding-top:10px;
+        background-color: black;
+        color: white;
     }
 
 #pokeball{
     margin: auto;
-    height: 100px;
-    width: 100px;
+    height: 50px;
+    width: 50px;
 }
