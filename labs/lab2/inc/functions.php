@@ -22,7 +22,7 @@ function displaySymbol($randomValue, $pos){
             }
 
             
-            echo "img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='". ucfirst($symbol) . "' width='70' >";
+            echo "<img id='reel$pos' src='img/$symbol.png' alt='$symbol' title='". ucfirst($symbol) . "' width='70' >";
 
         }
 
