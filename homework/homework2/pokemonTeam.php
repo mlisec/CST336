@@ -19,6 +19,7 @@
         }
         
         function createTeam(){
+            global $team;
             while (count($team) < 6) {
                 $x = rand(0,17);
                 while (in_array($x, $team)) {
@@ -27,10 +28,11 @@
                 
                 array_push($team, $x);
             }
+            
         }
         
         function displayTeam(){
-            
+            global $team;
             for ($i=0; $i < 6; $i++) {
                 echo $team[$i] . "<br>";
             }
