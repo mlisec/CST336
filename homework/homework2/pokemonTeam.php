@@ -13,6 +13,11 @@
         
         $team = array();
         
+        function generateTeam(){
+            createTeam();
+            displayTeam();
+        }
+        
         function createTeam(){
             while (count($team) < 6) {
                 $x = rand(0,17);
