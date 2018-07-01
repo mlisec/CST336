@@ -1,0 +1,16 @@
+img {
+    height: 240px;
+    width: 240px;
+}
+
+body {
+        background-color: black;
+        background-image:url("img/bg-ball.jpg");
+        color: white;
+        
+    }
+    
+h1 {
+        text-align: center;
+        
+    }

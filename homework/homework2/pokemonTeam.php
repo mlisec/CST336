@@ -3,11 +3,18 @@
     
     <head>
         <title>Pokemon Team</title>
+        
+        <style>
+
+            @import url("css/styles.css");
+
+        </style>
+
     </head>
     
     <body>
         
-        <h1>Your team.</h1>
+        <h1>Your team!</h1>
         
         <?php
         
