@@ -132,4 +132,9 @@
         
     </body>
     
+    <footer>
+        <p>This tool will help you select a diverse team.</p>
+        <p><img id="pokeball" src="../img/pokeball.jpg" alt="pokeball" title="Pokeball"></p>
+    </footer>
+    
 </html>

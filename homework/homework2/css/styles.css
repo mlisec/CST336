@@ -12,6 +12,22 @@ body {
     }
     
 h1 {
+        font-family: "Times New Roman", Georgia, Serif;
+        font-size: 20em;
         text-align: center;
         
     }
+    
+    footer{
+        font-family: "Times New Roman", Georgia, Serif;
+        font-size:.8em;
+        width:600px;
+        margin:0 auto;
+        padding-top:10px;
+    }
+
+#pokeball{
+    margin: auto;
+    height: 100px;
+    width: 100px;
+}
