@@ -18,6 +18,10 @@ function displaySymbol($randomValue, $pos){
                 case 2: $symbol = "lemon";
 
                         break;
+                        
+                case 3: $symbol = "grapes";
+                
+                        break;
 
             }
 
@@ -50,6 +54,10 @@ function displayPoints($randomValue1, $randomValue2, $randomValue3) {
             case 2: $totalPoints = 250;
 
                     break;
+                    
+            case 3: $totalPoints = 100;
+            
+                    break;
 
         }
 
@@ -71,7 +79,7 @@ function displayPoints($randomValue1, $randomValue2, $randomValue3) {
 function play() {
 
             for ($i=1; $i<4; $i++) {
-                ${"randomValue" . $i } = rand(0,2);
+                ${"randomValue" . $i } = rand(0,3);
 
                 displaySymbol(${"randomValue" . $i}, $i);
 
