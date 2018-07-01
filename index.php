@@ -8,6 +8,10 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 ?>
 
+<br><br>
+
+<h1>Labs</h1>
+
 <br>
 
 <a href="labs/lab2/">Lab 2</a> 
