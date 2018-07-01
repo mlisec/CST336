@@ -111,14 +111,14 @@
                     
                             break;
                 }
-            }
+            
             echo $name;
             //echo "<img src='img/$name.png' alt='$name' title='". ucfirst($name) . "'>";
             
             /*for ($i=0; $i < 6; $i++) {
                 echo $team[$i] . "<br>";
             }*/
-        
+            }
         }
         
         ?>
