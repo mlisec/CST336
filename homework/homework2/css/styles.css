@@ -4,6 +4,7 @@ img {
 }
 
 body {
+        background-color: transparent;
         background-image:url("img/bg-ball.jpg");
         color: white;
         
