@@ -13,6 +13,8 @@
         
         $team = array();
         
+        generateTeam();
+        
         function generateTeam(){
             createTeam();
             displayTeam();
