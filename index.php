@@ -22,6 +22,6 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 <br>
 
-<a href="homework/homwork2/pokemonTeam.php">Homework 2</a>
+<a href="homework/homework2/pokemonTeam.php">Homework 2</a>
 </body>
 </html>
