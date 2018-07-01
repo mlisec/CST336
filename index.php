@@ -14,6 +14,6 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 <br>
 
-<a href="labs/lab2/">Lab 2</a> 
+<a href="labs/lab2/lab2.php">Lab 2</a> 
 </body>
 </html>
