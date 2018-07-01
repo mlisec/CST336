@@ -27,7 +27,7 @@
         function displayTeam(){
             
             for ($i=0; $i < 6; $i++) {
-                echo $team[$i];
+                echo $team[$i] . "<br>";
             }
         
         }
