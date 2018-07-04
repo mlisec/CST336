@@ -2,7 +2,12 @@
 
     $backgroundImage = "img/sea.jpg";
     
-    
+    if(isset($_GET['keyword'])) {
+        include 'api/pixabayAPI.php';
+        $keyword = $_GET['keyword'];
+        $imageURLs = getImageURLs($keyword);
+        $backgroundImage = $imageURLs[array_rand($imageURLs)];
+    }
     
 ?>
 
@@ -19,7 +24,7 @@
             @import url("css/styles.css");
             
             body {
-                background-image: url('<?=$backgroundImage ?>');
+                background-image: url(<?=$backgroundImage?>);
             }
             
         </style>
@@ -27,18 +32,14 @@
     
     <body>
         
-        <br><br>
+        <br>
         
         <?php
         
-        if (isset($_GET['keyword'])) {
-        include 'api/pixabayAPI.php';
-        $keyword = $_GET['keyword'];
-        $imageURLs = getImageURLs($keyword);
-        $backgroundImage = $imageURLs[array_rand($imageURLs)];
-            }
         
-            if (!isset($imageURLs)) {
+            
+        
+            if(!isset($imageURLs)) {
                 echo "<h2> Type a keyword to display a slideshow <br> with random images from Pixbay.com </h2>";
             } else {
                 //Display Carousel Here
@@ -49,9 +50,9 @@
             
             <ol class="carousel-indicators">
                 <?php
-                for ($i = 0; $i < 5; $i++) {
+                for ($i = 0; $i < 7; $i++) {
                     echo "<li data-target='#carousel-example-generic' data-slide-to='$i'";
-                    echo ($i == 0)?" class='active'": "";
+                    echo ($i == 0) ? "class='active'" : "";
                     echo "></li>";
                     
                 }
@@ -66,12 +67,12 @@
                 
                 for ($i = 0; $i < 7; $i++) {
                     do {
-                        $randomIndex = rand(0, count(imageURLs));
+                        $randomIndex = rand(0, count($imageURLs));
                     }
                     while (!isset($imageURLs[$randomIndex]));
                     
                     echo '<div class="item ';
-                    echo ($i == 0)?"active": "";
+                    echo ($i == 0) ? "active" : "";
                     echo '">';
                     echo '<img src="' . $imageURLs[$randomIndex] . '" >';
                     echo '</div>';
@@ -117,7 +118,7 @@
                 <option value = mountain>Mountain</option>
                 <option value = snow>Snow</option>
             </select>
-            <br>
+            
             <input type="submit" value="Submit" />
             
         </form>
