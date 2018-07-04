@@ -17,7 +17,7 @@
             @import url("css/styles.css");
             
             body {
-                background-image: url('<?=backgroundImage ?>');
+                background-image: url('<?=$backgroundImage ?>');
             }
             
         </style>
