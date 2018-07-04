@@ -71,7 +71,7 @@
                     }
                     while (!isset($imageURLs[$randomIndex]));
                     
-                    echo '<div class="item ';
+                    echo '<div class="carousel-item ';
                     echo ($i == 0) ? "active" : "";
                     echo '">';
                     echo '<img src="' . $imageURLs[$randomIndex] . '" >';
@@ -106,7 +106,7 @@
             
             <input type="text" name="keyword" placeholder="Keyword" value="<?=$_GET['keyword']?>"/>
             <br>
-           <!-- <input type = "radio" id = "lhorizontal" name = "layout" value = "horizontal">
+            <input type = "radio" id = "lhorizontal" name = "layout" value = "horizontal">
             <label for = "Horizontal"></label><label for="lhorizontal">Horizontal</label>
             <input type = "radio" id = "lvertical" name = "layout" value = "vertical">
             <label for = "Vertical"></label><label for = "lvertical">Vertical</label>
@@ -117,7 +117,7 @@
                 <option value = "forest">Forest</option>
                 <option value = mountain>Mountain</option>
                 <option value = snow>Snow</option>
-            </select> -->
+            </select>
             
             <input type="submit" value="Submit" />
             
