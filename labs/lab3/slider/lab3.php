@@ -36,7 +36,9 @@
             }
             
             if (isset($_GET['keyword'])) {
-                echo "You searched for: " . $_GET['keyword'];
+                include 'api/pixabayAPI.php';
+                $imageURLs = getImageURLs($_GET['keyword']);
+                print_r($imageURLs);
             }
             
         ?>
