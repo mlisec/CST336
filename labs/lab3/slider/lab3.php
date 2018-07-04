@@ -5,7 +5,7 @@
     if (isset($_GET['keyword'])) {
         include 'api/pixabayAPI.php';
         $keyword = $_GET['keyword'];
-        $imageURLs = getImageURLs($_GET['keyword']);
+        $imageURLs = getImageURLs($keyword);
         $backgroundImage = $imageURLs[array_rand($imageURLs)];
             }
     
@@ -36,8 +36,6 @@
         
         <?php
         
-            
-        
             if (!isset($imageURLs)) {
                 echo "<h2> Type a keyword to display a slideshow <br> with random images from Pixbay.com </h2>";
             } else {
@@ -64,7 +62,7 @@
                 <?php
             
                 
-                for ($i = 0; $i < 5; $i++) {
+                for ($i = 0; $i < 7; $i++) {
                     do {
                         $randomIndex = rand(0, count(imageURLs));
                     }
