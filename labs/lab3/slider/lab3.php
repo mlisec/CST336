@@ -29,20 +29,22 @@
         
         <?php
         
-            if (!isset($imageURLs)) {
-                echo "<h2> Type a keyword to display a slideshow <br> with random images from Pixbay.com </h2>";
-            } else {
-                //Display Carousel Here
-                for ($i = 0; $i < 5; $i++) {
-                    echo "<img src='" . $imageURLs[$i] . "' width='200'>";
-                }
-            }
-            
             if (isset($_GET['keyword'])) {
                 include 'api/pixabayAPI.php';
                 $imageURLs = getImageURLs($_GET['keyword']);
                 $backgroundImage = $imageURLs[array_rand($imageURLs)];
             }
+        
+            if (!isset($imageURLs)) {
+                echo "<h2> Type a keyword to display a slideshow <br> with random images from Pixbay.com </h2>";
+            } else {
+                //Display Carousel Here
+                for ($i = 0; $i < 5; $i++) {
+                    echo "<img src='" . $imageURLs[$i] . "' width='200' >";
+                }
+            }
+            
+            
             
         ?>
         
