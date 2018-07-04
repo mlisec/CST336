@@ -38,7 +38,7 @@
             if (isset($_GET['keyword'])) {
                 include 'api/pixabayAPI.php';
                 $imageURLs = getImageURLs($_GET['keyword']);
-                print_r($imageURLs);
+                $backgroundImage = $imageURLs[array_rand($imageURLs)];
             }
             
         ?>
