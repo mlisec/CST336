@@ -2,12 +2,7 @@
 
     $backgroundImage = "img/sea.jpg";
     
-    if (isset($_GET['keyword'])) {
-        include 'api/pixabayAPI.php';
-        $keyword = $_GET['keyword'];
-        $imageURLs = getImageURLs($keyword);
-        $backgroundImage = $imageURLs[array_rand($imageURLs)];
-            }
+    
     
 ?>
 
@@ -35,6 +30,13 @@
         <br><br>
         
         <?php
+        
+        if (isset($_GET['keyword'])) {
+        include 'api/pixabayAPI.php';
+        $keyword = $_GET['keyword'];
+        $imageURLs = getImageURLs($keyword);
+        $backgroundImage = $imageURLs[array_rand($imageURLs)];
+            }
         
             if (!isset($imageURLs)) {
                 echo "<h2> Type a keyword to display a slideshow <br> with random images from Pixbay.com </h2>";
@@ -102,10 +104,12 @@
         <form>
             
             <input type="text" name="keyword" placeholder="Keyword" value="<?=$_GET['keyword']?>"/>
+            <br>
             <input type = "radio" id = "lhorizontal" name = "layout" value = "horizontal">
             <label for = "Horizontal"></label><label for="lhorizontal">Horizontal</label>
             <input type = "radio" id = "lvertical" name = "layout" value = "vertical">
             <label for = "Vertical"></label><label for = "lvertical">Vertical</label>
+            <br>
             <select name = "category">
                 <option value ="">Select One</option>
                 <option value = "ocean">Sea</option>
@@ -113,6 +117,7 @@
                 <option value = mountain>Mountain</option>
                 <option value = snow>Snow</option>
             </select>
+            <br>
             <input type="submit" value="Submit" />
             
         </form>
