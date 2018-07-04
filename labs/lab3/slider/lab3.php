@@ -34,7 +34,11 @@
             } else {
                 //Display Carousel Here
             }
-        
+            
+            if (isset($_GET['keyword'])) {
+                echo "You searched for: " . $_GET['keyword'];
+            }
+            
         ?>
         
         <form>
