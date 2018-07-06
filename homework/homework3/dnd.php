@@ -42,6 +42,8 @@
                 <option value="rogue">Rogue</option>
                 <option value="wizard">wizard</option>
             </select>
+            
+            <br><br>
         
             <!-- checkbox for starter items -->
             <!-- submit button generates starting stats -->
@@ -49,5 +51,13 @@
             <input type="submit" value="Submit" />
         </form>
         
+        <br><br>
+        <?php
+        
+            if (isset($_GET['charName'])) {
+                echo "Your character's name is " . $_GET['charName'];
+            }
+        
+        ?>
     </body>
 </html>
