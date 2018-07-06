@@ -6,7 +6,7 @@
     
     <body>
         <!-- name of character in a text box -->
-        <h3>Enter your chacter name.</h3>
+        Enter your chacter name.
         <input name="charName" type="text">
         <!-- radio for male or female -->
         <!-- select for race -->
