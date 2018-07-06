@@ -25,7 +25,7 @@
             <!-- select for race -->
             <label for="race-select">Choose a race:</label>
             <br>
-            <select id="race-select" name="race" form="raceform" value="human" method="get">
+            <select id="race-select" name="race" value="human">
                 <option value="human">Human</option>
                 <option value="dwarf">Dwarf</option>
                 <option value="elf">Elf</option>
@@ -37,7 +37,7 @@
             <!-- select for class -->
             Choose your class.
             <br>
-            <select name="class" form="classform" value="cleric">
+            <select name="class" value="cleric">
                 <option value="cleric">Cleric</option>
                 <option value="fighter">Fighter</option>
                 <option value="rogue">Rogue</option>
@@ -57,7 +57,7 @@
         
             if (isset($_GET['charName'])) {
                 echo "Your character's name is " . $_GET['charName'];
-                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race-select'] . ".";
+                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
             }
         
         ?>
