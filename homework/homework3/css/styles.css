@@ -6,10 +6,12 @@ form {
 
 body {
     
+    text-align: center;
     background-image: url("../img/oldscroll.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-color: black;
+    background-color: #4f5256;
+    color: #3d1a07;
     
 }
 
