@@ -16,16 +16,16 @@
             <!-- radio for male or female -->
             Select your gender.
             <br>
-            <input type="radio" name="gender" value="male" select> Male<br>
+            <input type="radio" name="gender" value="male" checked> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
             <input type="radio" name="gender" value="other"> Other  
         
             <br><br>
         
             <!-- select for race -->
-            Choose your race.
+            <label for="race-select">Choose a race:</label>
             <br>
-            <select name="race" form="raceform" value="human" method="get">
+            <select id="race-select" name="race" form="raceform" value="human" method="get">
                 <option value="human">Human</option>
                 <option value="dwarf">Dwarf</option>
                 <option value="elf">Elf</option>
@@ -57,7 +57,7 @@
         
             if (isset($_GET['charName'])) {
                 echo "Your character's name is " . $_GET['charName'];
-                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
+                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race-select'] . ".";
             }
         
         ?>
