@@ -35,9 +35,9 @@
             <br><br>
         
             <!-- select for class -->
-            Choose your class.
+            <label for="class-select">Choose a class:</label>
             <br>
-            <select name="class" value="cleric">
+            <select id="class-select" name="class" value="cleric">
                 <option value="cleric">Cleric</option>
                 <option value="fighter">Fighter</option>
                 <option value="rogue">Rogue</option>
@@ -56,8 +56,9 @@
         <?php
         
             if (isset($_GET['charName'])) {
-                echo "Your character's name is " . $_GET['charName'];
+                echo "Your character's name is " . $_GET['charName'] . ".";
                 echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
+                echo "<br>You have chosen to be a " . $_GET['class'] . ".";
             }
         
         ?>
