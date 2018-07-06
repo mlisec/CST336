@@ -20,6 +20,10 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 <a href="labs/lab3/slider/lab3.php">Lab 3</a> 
 
+<br>
+
+<a href="labs/lab4/scart/lab4.php">Lab 4</a>
+
 <br><br>
 
 <h1>Homework</h1>
