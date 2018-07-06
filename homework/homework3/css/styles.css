@@ -6,6 +6,7 @@ form {
 
 body {
     
-    background-image: url("../img/oldscroll.jpg")
-    
+    background-image: url("../img/oldscroll.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
