@@ -7,7 +7,7 @@
     if (isset($_POST['removeId'])) {
         foreach ($_SESSION['cart'] as $itemKey => $item) {
             if ($item['id'] == $_POST['removeId']) {
-                unset($_SESSION['cart'][$itemLey]);
+                unset($_SESSION['cart'][$itemKey]);
             }
         }
     }

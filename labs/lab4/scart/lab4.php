@@ -20,11 +20,11 @@
         //Creating an array to hold an item's properties.
         $newItem = array();
         $newItem['name'] = $_POST['itemName'];
-        $newItem['id'] = $_POST['itemId'];
         $newItem['price'] = $_POST['itemPrice'];
-        $newItem['image'] = $_POST['itemImage'];
+        $newItem['image'] = $_POST['itemImg'];
+        $newItem['id'] = $_POST['itemId'];
         
-        foreach ($_SESSION['cart'] as $item) {
+        foreach ($_SESSION['cart'] as &$item) {
             if ($newItem['id'] == $item['id']) {
                 $item['quantity'] += 1;
                 $found = true;
@@ -62,7 +62,9 @@
                     </div>
                     <ul class='nav navbar-nav'>
                         <li><a href='lab4.php'>Home</a></li>
-                        <li><a href='scart.php'>Cart</a></li>
+                        <li><a href='scart.php'>
+                        <span class='glyphicon glyphicon-shopping-cart' aria-hidden='true'>
+                        </span> Cart: <?php displayCartCount(); ?> </a></li>
                     </ul>
                 </div>
             </nav>

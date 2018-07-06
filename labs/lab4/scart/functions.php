@@ -1,6 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-
 <?php
     function displayResults() {
         global $items; //Necessary to get the global items array
@@ -11,7 +8,7 @@
                 $itemName =$item['name'];
                 $itemPrice = $item['salePrice'];
                 $itemImage = $item['thumbnailImage'];
-                $itemID = $item['itemId'];
+                $itemId = $item['itemId'];
                 
                 //Display item as table row
                 echo '<tr>';
@@ -22,14 +19,16 @@
                 //Hidden input element containing the item name
                 echo "<form method='post'>";
                 echo "<input type='hidden' name='itemName' value='$itemName'>";
-                echo "<input type='hidden' name='itemId' value='$itemId'>";
-                echo "<input type='hidden' name='itemImage' value='$itemImage'>";
                 echo "<input type='hidden' name='itemPrice' value'$itemPrice'>";
+                echo "<input type='hidden' name='itemImage' value='$itemImage'>";
+                echo "<input type='hidden' name='itemId' value='$itemId'>";
+                
+                
                 
                 if ($_POST['itemId'] == $itemId) {
-                    echo '<td><button class="btn btn-success">Add</button></td>';
+                    echo '<td><button class="btn btn-success">Added</button></td>';
                 } else {
-                    echo '<td><button class="btn btn-warning">Added</button></td>';
+                    echo '<td><button class="btn btn-warning">Add</button></td>';
                 }
                 
                 echo "</tr>";
@@ -61,7 +60,7 @@
                 
                 //Hidden input element containing the item name
                 echo "<form method='post'>";
-                echo "<input type='hidden' name='removeId' vale='$itemId'>";
+                echo "<input type='hidden' name='removeId' value='$itemId'>";
                 echo "<td><button class='btn btn-danger'>Remove</button></td>";
                 echo "</form>";
                 
