@@ -12,7 +12,7 @@
     
     <body>
         
-        <h2>Create your Dungeons and Dragons character!</h2>
+        <h1 id="top-title">Create your Dungeons and Dragons character!</h1>
         
         <!-- name of character in a text box -->
         

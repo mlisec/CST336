@@ -9,4 +9,12 @@ body {
     background-image: url("../img/oldscroll.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-color: black;
+    
+}
+
+#top-title {
+    
+    text-align: center;
+    
 }
