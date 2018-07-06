@@ -57,8 +57,7 @@
         
             if (isset($_GET['charName'])) {
                 echo "Your character's name is " . $_GET['charName'];
-                echo "<br>You are a " . $_GET['gender'];
-                echo " " . $_GET['racelist'];
+                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['racelist'] . ".";
             }
         
         ?>
