@@ -2,19 +2,26 @@
 <html>
     <head>
         <title>DnD Character</title>
+        <style>
+
+            @import url("css/styles.css");
+
+        </style>
+
     </head>
     
     <body>
         
         <!-- name of character in a text box -->
-        Enter your character name.
-        <form>
-            <input name="charName" type="text" value="Bruenor the Brave">
+        
+        <form method="get">
+            <label for="char-name">Enter character name:</label>
+            <input id="char-name" name="charName" type="text" value="Bruenor the Brave">
         
             <br><br>
         
             <!-- radio for male or female -->
-            Select your gender.
+            Select your gender:
             <br>
             <input type="radio" name="gender" value="male" checked> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
