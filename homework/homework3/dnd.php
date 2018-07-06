@@ -10,20 +10,20 @@
         <form>
             <input name="charName" type="text">
         
-        <br><br>
+            <br><br>
         
-        <!-- radio for male or female -->
-        Select your gender.
-        
+            <!-- radio for male or female -->
+            Select your gender.
+            <br>
             <input type="radio" name="gender" value="male"> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
             <input type="radio" name="gender" value="other"> Other  
         
-        <br><br>
+            <br><br>
         
-        <!-- select for race -->
-        Choose your race.
-        
+            <!-- select for race -->
+            Choose your race.
+            <br>
             <select name="racelist" form="raceform">
                 <option value="human">Human</option>
                 <option value="dwarf">Dwarf</option>
@@ -31,10 +31,11 @@
                 <option value="halfling">Halfling</option>
             </select>
         
-        <br><br>
+            <br><br>
         
-        <!-- select for class -->
-        
+            <!-- select for class -->
+            Choose your class.
+            <br>
             <select name="classlist" form="classform">
                 <option value="cleric">Cleric</option>
                 <option value="fighter">Fighter</option>
@@ -42,8 +43,8 @@
                 <option value="wizard">wizard</option>
             </select>
         
-        <!-- checkbox for starter items -->
-        <!-- submit button generates starting stats -->
+            <!-- checkbox for starter items -->
+            <!-- submit button generates starting stats -->
         
             <input type="submit" value="Submit" />
         </form>
