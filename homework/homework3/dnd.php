@@ -12,6 +12,8 @@
     
     <body>
         
+        <h2>Create your Dungeons and Dragons character!</h2>
+        
         <!-- name of character in a text box -->
         
         <form method="get">
