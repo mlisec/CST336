@@ -9,14 +9,14 @@
         <!-- name of character in a text box -->
         Enter your character name.
         <form>
-            <input name="charName" type="text">
+            <input name="charName" type="text" value="Bruenor the Brave">
         
             <br><br>
         
             <!-- radio for male or female -->
             Select your gender.
             <br>
-            <input type="radio" name="gender" value="male"> Male<br>
+            <input type="radio" name="gender" value="male" select> Male<br>
             <input type="radio" name="gender" value="female"> Female<br>
             <input type="radio" name="gender" value="other"> Other  
         
@@ -25,7 +25,7 @@
             <!-- select for race -->
             Choose your race.
             <br>
-            <select name="racelist" form="raceform">
+            <select name="race" form="raceform" value="human" method="get">
                 <option value="human">Human</option>
                 <option value="dwarf">Dwarf</option>
                 <option value="elf">Elf</option>
@@ -37,7 +37,7 @@
             <!-- select for class -->
             Choose your class.
             <br>
-            <select name="classlist" form="classform">
+            <select name="class" form="classform" value="cleric">
                 <option value="cleric">Cleric</option>
                 <option value="fighter">Fighter</option>
                 <option value="rogue">Rogue</option>
@@ -57,7 +57,7 @@
         
             if (isset($_GET['charName'])) {
                 echo "Your character's name is " . $_GET['charName'];
-                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['racelist'] . ".";
+                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
             }
         
         ?>
