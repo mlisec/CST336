@@ -71,5 +71,38 @@
             }
         
         ?>
+        
+        <tr id="tablehead">
+            <td>Ability</td>
+            <td>Base Stats</td>
+            <td>Race Bonuses</td>
+            <td>Total</td>
+            <td>Modifiers</td>
+        </tr>
+        <tr>
+            <td>Strength</td>
+            <?php 
+            echo '<td> <input type="number" id="strength" name="strength" step="1" min="3" max="20"> </td>';
+            echo '<td>';
+                $strength = 0;
+                if ($_GET['race'] == 'human') {
+                    $strength = 1;
+                    echo "$strength";
+                }
+                else {
+                    $strength = 0;
+                    echo "$strength";
+                }
+            echo '</td>';
+            echo '<td>';
+                $totalStr = $_GET['strength'] + $strength;
+                echo '$totalStr';
+            echo '</td>';
+            echo '<td>';
+                $strMod = (($totalStr - 10) / 2);
+                echo '$strMod';
+            echo '</td>'
+            ?>
+        </tr>
     </body>
 </html>
