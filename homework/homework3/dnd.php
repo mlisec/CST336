@@ -71,7 +71,7 @@
             }
         
         ?>
-        
+        <br><br>
         <tr id="tablehead">
             <td>Ability</td>
             <td>Base Stats</td>
@@ -79,10 +79,11 @@
             <td>Total</td>
             <td>Modifiers</td>
         </tr>
+        <br>
         <tr>
             <td>Strength</td>
             <?php 
-            echo '<td> <input type="number" id="strength" name="strength" step="1" min="3" max="20"> </td>';
+            echo '<td> <input type="number" id="strength" name="strength" placeholder="3" step="1" min="3" max="20"> </td>';
             echo '<td>';
                 $strength = 0;
                 if ($_GET['race'] == 'human') {
