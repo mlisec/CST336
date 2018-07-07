@@ -72,7 +72,7 @@
         
         ?>
         <br><br>
-        <table id="tablehead">
+        <table id="tablehead" align="center">
             <tr>
                 <th>Ability</th>
                 <th>Base Stats</th>
@@ -102,12 +102,12 @@
                         echo "20";
                     } 
                     else {
-                        echo '$totalStr';
+                        echo "$totalStr";
                     }
                 echo '</td>';
                 echo '<td>';
                     $strMod = (($totalStr - 10) / 2);
-                    echo '$strMod';
+                    echo "$strMod";
                 echo '</td>'
                 ?>
             </tr>
