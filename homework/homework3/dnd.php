@@ -98,7 +98,12 @@
                 echo '</td>';
                 echo '<td>';
                     $totalStr = $_GET['strength'] + $strength;
-                    echo '$totalStr';
+                    if ($totalStr >= 20) {
+                        echo "20";
+                    } 
+                    else {
+                        echo '$totalStr';
+                    }
                 echo '</td>';
                 echo '<td>';
                     $strMod = (($totalStr - 10) / 2);
