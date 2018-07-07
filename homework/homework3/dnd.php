@@ -110,6 +110,7 @@
                     echo '$strMod';
                 echo '</td>'
                 ?>
-        </tr>
+            </tr>
+        </table>
     </body>
 </html>
