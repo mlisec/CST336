@@ -84,7 +84,7 @@
             <tr>
                 <td>Strength</td>
                 <?php 
-                echo '<td> <input type="number" id="strength" name="strength" placeholder="3" step="1" min="3" max="20"> </td>';
+                echo '<td> <input type="number" id="strength" name="strength" value="3" step="1" min="3" max="20"> </td>';
                 echo '<td>';
                     $strength = 0;
                     if ($_GET['race'] == 'human') {
@@ -107,7 +107,7 @@
                 echo '</td>';
                 echo '<td>';
                     $strMod = (($totalStr - 10) / 2);
-                    echo "$strMod";
+                    echo floor("$strMod");
                 echo '</td>'
                 ?>
             </tr>
