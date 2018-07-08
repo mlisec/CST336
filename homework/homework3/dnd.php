@@ -112,8 +112,8 @@
         <script>
             function myFunction() {
                 var x = document.getElementById("strength").value;
-                var y = document.getElementById("bonusStr");
-                var z = y.getElementsByTagName("td");
+                var y = document.getElementById("strength");
+                var z = y.getElementsId("bonusStr");
                 alert(z[0].innerText);
                 var actual = x + z;
                 if (z >= 20) {
