@@ -111,9 +111,13 @@
                 <?php 
                 echo '<td> <input type="number" id="dexterity" name="dexterityVal" value="3" step="1" min="3" max="20"> </td>';
                 echo '<td id="bonusDex">';
-                    $strength = 0;
+                    $dexterity = 0;
                         if ($_GET['race'] == 'elf' || $_GET['race'] == 'halfling') {
                             $dexterity = 2;
+                            echo "$dexterity";
+                        }
+                        else if ($_GET['race'] == 'human') {
+                            $dexterity = 1;
                             echo "$dexterity";
                         }
                         else {
@@ -131,6 +135,113 @@
                 ?>
             </tr>
             
+            <tr>
+                <td>Constitution</td>
+                <?php 
+                echo '<td> <input type="number" id="constitution" name="constitutionVal" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td id="bonusCon">';
+                    $constitution = 0;
+                        if ($_GET['race'] == 'dwarf') {
+                            $constitution = 2;
+                            echo "$constitution";
+                        }
+                        else if ($_GET['race'] == 'human') {
+                            $constitution = 1;
+                            echo "$constitution";
+                        }
+                        else {
+                            $constitution = 0;
+                            echo "$constitution";
+                        }
+                        
+                echo '</td>';
+                echo '<td id="con">';
+                    //This is where the Javascript function outputs
+                echo '</td>';
+                echo '<td id="conMod">';
+                    
+                echo '</td>'
+                ?>
+            </tr>
+            
+            <tr>
+                <td>Intelligence</td>
+                <?php 
+                echo '<td> <input type="number" id="intelligence" name="intelligenceVal" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td id="bonusInt">';
+                    $intelligence = 0;
+                        
+                        if ($_GET['race'] == 'human') {
+                            $intelligence = 1;
+                            echo "$intelligence";
+                        }
+                        else {
+                            $intelligence = 0;
+                            echo "$intelligence";
+                        }
+                        
+                echo '</td>';
+                echo '<td id="int">';
+                    //This is where the Javascript function outputs
+                echo '</td>';
+                echo '<td id="intMod">';
+                    
+                echo '</td>'
+                ?>
+            </tr>
+            
+            <tr>
+                <td>Wisdom</td>
+                <?php 
+                echo '<td> <input type="number" id="wisdom" name="wisdomVal" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td id="bonusWis">';
+                    $wisdom = 0;
+                        
+                        if ($_GET['race'] == 'human') {
+                            $wisdom = 1;
+                            echo "$wisdom";
+                        }
+                        else {
+                            $wisdom = 0;
+                            echo "$wisdom";
+                        }
+                        
+                echo '</td>';
+                echo '<td id="wis">';
+                    //This is where the Javascript function outputs
+                echo '</td>';
+                echo '<td id="wisMod">';
+                    
+                echo '</td>'
+                ?>
+            </tr>
+            
+            <tr>
+                <td>Charisma</td>
+                <?php 
+                echo '<td> <input type="number" id="charisma" name="charismaVal" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td id="bonusCha">';
+                    $charisma = 0;
+                        
+                        if ($_GET['race'] == 'human') {
+                            $charisma = 1;
+                            echo "$charisma";
+                        }
+                        else {
+                            $charisma = 0;
+                            echo "$charisma";
+                        }
+                        
+                echo '</td>';
+                echo '<td id="cha">';
+                    //This is where the Javascript function outputs
+                echo '</td>';
+                echo '<td id="chaMod">';
+                    
+                echo '</td>'
+                ?>
+            </tr>
+            
         </table>
         <br><br>
         <button onclick="myFunction()">Calculate Stats</button>
@@ -140,6 +251,10 @@
                 
                 getStrength();
                 getDexterity();
+                getConstitution();
+                getIntelligence();
+                getWisdom();
+                getCharisma();
                 
             }
             
@@ -165,6 +280,54 @@
                     document.getElementById("dex").innerHTML = z;
                 }
                 document.getElementById("dexMod").innerHTML = Math.floor((z - 10) / 2);
+            }
+            
+            function getConstitution() {
+                var x = document.getElementById("constitution").value;
+                var y = document.getElementById("bonusCon").innerText;
+                var z = parseInt(x) + parseInt(y);
+                if (z >= 20) {
+                    document.getElementById("con").innerHTML = 20;
+                } else {
+                    document.getElementById("con").innerHTML = z;
+                }
+                document.getElementById("conMod").innerHTML = Math.floor((z - 10) / 2);
+            }
+            
+            function getIntelligence() {
+                var x = document.getElementById("intelligence").value;
+                var y = document.getElementById("bonusInt").innerText;
+                var z = parseInt(x) + parseInt(y);
+                if (z >= 20) {
+                    document.getElementById("int").innerHTML = 20;
+                } else {
+                    document.getElementById("int").innerHTML = z;
+                }
+                document.getElementById("intMod").innerHTML = Math.floor((z - 10) / 2);
+            }
+            
+            function getWisdom() {
+                var x = document.getElementById("wisdom").value;
+                var y = document.getElementById("bonusWis").innerText;
+                var z = parseInt(x) + parseInt(y);
+                if (z >= 20) {
+                    document.getElementById("wis").innerHTML = 20;
+                } else {
+                    document.getElementById("wis").innerHTML = z;
+                }
+                document.getElementById("wisMod").innerHTML = Math.floor((z - 10) / 2);
+            }
+            
+            function getCharisma() {
+                var x = document.getElementById("charisma").value;
+                var y = document.getElementById("bonusCha").innerText;
+                var z = parseInt(x) + parseInt(y);
+                if (z >= 20) {
+                    document.getElementById("cha").innerHTML = 20;
+                } else {
+                    document.getElementById("cha").innerHTML = z;
+                }
+                document.getElementById("chaMod").innerHTML = Math.floor((z - 10) / 2);
             }
         </script>
     </body>
