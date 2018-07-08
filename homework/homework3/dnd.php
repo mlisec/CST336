@@ -96,8 +96,8 @@
                         echo "$strength";
                     }
                 echo '</td>';
-                echo '<td id="demo">';
-                    
+                echo '<td id="str">';
+                    //This is where the Javascript function outputs
                 echo '</td>';
                 echo '<td>';
                     $strMod = (($totalStr - 10) / 2);
@@ -107,12 +107,17 @@
             </tr>
         </table>
         <br><br>
-        <button onclick="myFunction()">Calculate</button>
+        <button onclick="myFunction()">Calculate Stats</button>
         
         <script>
             function myFunction() {
                 var x = document.getElementById("strength").value;
-                document.getElementById("demo").innerHTML = x;
+                var y = document.getElementById("bonusStr");
+                var z = x + y;
+                if (z >= 20) {
+                    z = 20;
+                }
+                document.getElementById("str").innerHTML = z;
             }
         </script>
     </body>
