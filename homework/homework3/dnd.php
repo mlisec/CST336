@@ -84,7 +84,7 @@
             <tr>
                 <td>Strength</td>
                 <?php 
-                echo '<td> <input type="number" id="strength" name="strength" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td> <input type="number" id="strength" name="strengthVal" value="3" step="1" min="3" max="20"> </td>';
                 echo '<td>';
                     $strength = 0;
                     if ($_GET['race'] == 'human') {
@@ -96,14 +96,8 @@
                         echo "$strength";
                     }
                 echo '</td>';
-                echo '<td>';
-                    $totalStr = $_GET['strength'] + $strength;
-                    if ($totalStr >= 20) {
-                        echo "20";
-                    } 
-                    else {
-                        echo "$totalStr";
-                    }
+                echo '<td id="demo">';
+                    
                 echo '</td>';
                 echo '<td>';
                     $strMod = (($totalStr - 10) / 2);
@@ -112,5 +106,18 @@
                 ?>
             </tr>
         </table>
+        <br><br>
+        <button onclick="myFunction()">Calculate</button>
+        
+        <script>
+            function myFunction() {
+                var x = document.getElementById("strength").value;
+                if (x >= 20) {
+                    x = 20;
+                }
+                document.getElementById("demo").innerHTML = x;
+            }
+        </script>
     </body>
 </html>
+
