@@ -85,7 +85,7 @@
                 <td>Strength</td>
                 <?php 
                 echo '<td> <input type="number" id="strength" name="strengthVal" value="3" step="1" min="3" max="20"> </td>';
-                echo '<td>';
+                echo '<td id="bonusStr">';
                     $strength = 0;
                     if ($_GET['race'] == 'human') {
                         $strength = 1;
@@ -111,7 +111,7 @@
         
         <script>
             function myFunction() {
-                var x = document.getElementById("strength").value;
+                var x = document.getElementById("strength").value + document.getElementById("bonusStr").value;
                 if (x >= 20) {
                     x = 20;
                 }
