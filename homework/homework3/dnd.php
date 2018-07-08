@@ -70,14 +70,7 @@
                 echo "<br>You have chosen to be a " . $_GET['class'] . ".";
             }
             
-            $strength = 0;
-                    if ($_GET['race'] == 'human') {
-                        $strength = 1;
-                    }
-                    else {
-                        $strength = 0;
-                    }
-        
+            
         ?>
         <br><br>
         <table id="tablehead" align="center">
@@ -93,9 +86,17 @@
                 <td>Strength</td>
                 <?php 
                 echo '<td> <input type="number" id="strength" name="strengthVal" value="3" step="1" min="3" max="20"> </td>';
-                echo '<td id="bonusStr" value="$strength">';
-                echo "global $strength";    
-                echo "$strength";
+                echo '<td id="bonusStr">';
+                    $strength = 0;
+                        if ($_GET['race'] == 'human') {
+                            $strength = 1;
+                            echo "$strength";
+                        }
+                        else {
+                            $strength = 0;
+                            echo "$strength";
+                        }
+        
                     
                 echo '</td>';
                 echo '<td id="str">';
