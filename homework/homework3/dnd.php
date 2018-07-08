@@ -49,7 +49,7 @@
                 <option value="cleric">Cleric</option>
                 <option value="fighter">Fighter</option>
                 <option value="rogue">Rogue</option>
-                <option value="wizard">wizard</option>
+                <option value="wizard">Wizard</option>
             </select>
             
             <br><br>
