@@ -112,14 +112,7 @@
         <script>
             function myFunction() {
                 var x = document.getElementById("strength").value;
-                var y = document.getElementById("strength");
-                var z = y.getElementsId("bonusStr");
-                alert(z[0].innerText);
-                var actual = x + z;
-                if (actual >= 20) {
-                    actual = 20;
-                }
-                document.getElementById("demo").innerHTML = actual;
+                document.getElementById("demo").innerHTML = x;
             }
         </script>
     </body>
