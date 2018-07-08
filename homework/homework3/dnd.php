@@ -114,9 +114,8 @@
         <script>
             function myFunction() {
                 var x = document.getElementById("strength").value;
-                var y = document.getElementById("bonusStr").value;
-                console.log(document.getElementById("bonusStr").value);
-                var z = x + y;
+                var y = document.getElementById("bonusStr").innerText;
+                var z = parseInt(x) + parseInt(y);
                 if (z >= 20) {
                     document.getElementById("str").innerHTML = 20;
                 } else {
