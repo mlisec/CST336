@@ -115,6 +115,7 @@
             function myFunction() {
                 var x = document.getElementById("strength").value;
                 var y = document.getElementById("bonusStr").value;
+                console.log(document.getElementById("bonusStr").value);
                 var z = x + y;
                 if (z >= 20) {
                     document.getElementById("str").innerHTML = 20;
