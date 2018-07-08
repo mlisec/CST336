@@ -95,8 +95,7 @@
                             $strength = 0;
                             echo "$strength";
                         }
-        
-                    
+                        
                 echo '</td>';
                 echo '<td id="str">';
                     //This is where the Javascript function outputs
@@ -112,6 +111,12 @@
         
         <script>
             function myFunction() {
+                
+                getStrength();
+                
+            }
+            
+            function getStrength() {
                 var x = document.getElementById("strength").value;
                 var y = document.getElementById("bonusStr").innerText;
                 var z = parseInt(x) + parseInt(y);
@@ -120,7 +125,7 @@
                 } else {
                     document.getElementById("str").innerHTML = z;
                 }
-                document.getElementById("strMod").innerHTML = ((z - 10) / 2);
+                document.getElementById("strMod").innerHTML = Math.floor((z - 10) / 2);
             }
         </script>
     </body>
