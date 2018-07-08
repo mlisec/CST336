@@ -101,9 +101,8 @@
                 echo '<td id="str">';
                     //This is where the Javascript function outputs
                 echo '</td>';
-                echo '<td>';
-                    $strMod = (($totalStr - 10) / 2);
-                    echo floor("$strMod");
+                echo '<td id="strMod">';
+                    
                 echo '</td>'
                 ?>
             </tr>
@@ -121,6 +120,7 @@
                 } else {
                     document.getElementById("str").innerHTML = z;
                 }
+                document.getElementById("strMod").innerHTML = ((z - 10) / 2);
             }
         </script>
     </body>
