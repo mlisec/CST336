@@ -25,9 +25,8 @@
             <!-- radio for male or female -->
             Select your gender:
             <br>
-            <input type="radio" name="gender" value="male" checked> Male<br>
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="radio" name="gender" value="other"> Other  
+            <input type="radio" name="gender" value="male" checked> Male
+            <input type="radio" name="gender" value="female"> Female
         
             <br><br>
         
