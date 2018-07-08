@@ -25,7 +25,6 @@ table, th, td {
 
 #charInfo {
     
-    background-color: white;
     font-weight: bold;
     
 }
@@ -34,7 +33,7 @@ footer{
     
     font-family: "Lucida Console", Monaco, monospace;
     font-size:.8em;
-    width:600px;
+    width:500px;
     margin: auto;
     padding-top:10px;
     background-color: black;
@@ -49,4 +48,5 @@ footer{
     margin-right: auto;
     height: 50px;
     width: 200px;
+    padding-bottom: 10px;
 }
