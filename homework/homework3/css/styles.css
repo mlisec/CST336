@@ -23,6 +23,30 @@ table, th, td {
     
 }
 
-#characterInfo {
+#charInfo {
+    
     background-color: white;
+    font-weight: bold;
+    
+}
+
+footer{
+    
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size:.8em;
+    width:600px;
+    margin: auto;
+    padding-top:10px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+    
+#dndlogo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 200px;
 }

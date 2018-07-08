@@ -65,9 +65,10 @@
         <?php
         
             if (isset($_GET['charName'])) {
-                echo "Your character's name is " . $_GET['charName'] . ".";
-                echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
-                echo "<br>You have chosen to be a " . $_GET['class'] . ".";
+                echo "Your character's name is " . $_GET['charName'] . ". ";
+                echo "You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
+                echo "<br>You have chosen to be a " . $_GET['class'] . ". ";
+                
                 if ($_GET['class'] == "cleric") {
                     echo "A cleric's focus should be Wisdom.";
                 }
@@ -346,5 +347,10 @@
             }
         </script>
     </body>
+    
+    <footer>
+        <p>This tool will help start a DnD character.</p>
+        <p><img id="dndlogo" src="img/dnd_logo.jpg" alt="dndlogo" title="Dndlogo"></p>
+    </footer>
 </html>
 
