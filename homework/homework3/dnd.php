@@ -105,6 +105,32 @@
                 echo '</td>'
                 ?>
             </tr>
+            
+            <tr>
+                <td>Dexterity</td>
+                <?php 
+                echo '<td> <input type="number" id="dexterity" name="dexterityVal" value="3" step="1" min="3" max="20"> </td>';
+                echo '<td id="bonusDex">';
+                    $strength = 0;
+                        if ($_GET['race'] == 'elf' || $_GET['race'] == 'halfling') {
+                            $dexterity = 2;
+                            echo "$dexterity";
+                        }
+                        else {
+                            $dexterity = 0;
+                            echo "$dexterity";
+                        }
+                        
+                echo '</td>';
+                echo '<td id="dex">';
+                    //This is where the Javascript function outputs
+                echo '</td>';
+                echo '<td id="dexMod">';
+                    
+                echo '</td>'
+                ?>
+            </tr>
+            
         </table>
         <br><br>
         <button onclick="myFunction()">Calculate Stats</button>
@@ -113,6 +139,7 @@
             function myFunction() {
                 
                 getStrength();
+                getDexterity();
                 
             }
             
@@ -126,6 +153,18 @@
                     document.getElementById("str").innerHTML = z;
                 }
                 document.getElementById("strMod").innerHTML = Math.floor((z - 10) / 2);
+            }
+            
+            function getDexterity() {
+                var x = document.getElementById("dexterity").value;
+                var y = document.getElementById("bonusDex").innerText;
+                var z = parseInt(x) + parseInt(y);
+                if (z >= 20) {
+                    document.getElementById("dex").innerHTML = 20;
+                } else {
+                    document.getElementById("dex").innerHTML = z;
+                }
+                document.getElementById("dexMod").innerHTML = Math.floor((z - 10) / 2);
             }
         </script>
     </body>
