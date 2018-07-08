@@ -94,7 +94,7 @@
                 <th>Base Stats</th>
                 <th>Race Bonuses</th>
                 <th>Total</th>
-                <th>Modifiers</th>
+                <th>Roll Modifiers</th>
             </tr>
         
             <tr>
