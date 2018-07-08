@@ -11,6 +11,7 @@ body {
     background-image: url("../img/scroll.jpg");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 1000px 1000px;
     background-color: #151619;
     color: #3d1a07;
     
@@ -21,3 +22,4 @@ table, th, td {
     border: 1px solid black;
     
 }
+

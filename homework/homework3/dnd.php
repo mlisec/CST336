@@ -117,9 +117,10 @@
                 var y = document.getElementById("bonusStr").value;
                 var z = x + y;
                 if (z >= 20) {
-                    z = 20;
+                    document.getElementById("str").innerHTML = 20;
+                } else {
+                    document.getElementById("str").innerHTML = z;
                 }
-                document.getElementById("str").innerHTML = z;
             }
         </script>
     </body>
