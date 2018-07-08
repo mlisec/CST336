@@ -61,16 +61,31 @@
         </form>
         
         <br><br>
+        <div id="charInfo">
         <?php
         
             if (isset($_GET['charName'])) {
                 echo "Your character's name is " . $_GET['charName'] . ".";
                 echo "<br>You are a " . $_GET['gender'] . " " . $_GET['race'] . ".";
                 echo "<br>You have chosen to be a " . $_GET['class'] . ".";
+                if ($_GET['class'] == "cleric") {
+                    echo "A cleric's focus should be Wisdom.";
+                }
+                else if ($_GET['class'] == "fighter") {
+                    echo "A fighter's focus should be Strength or Dexterity.";
+                }
+                else if ($_GET['class'] == "rogue") {
+                    echo "A rogue's focus should be Dexterity.";
+                }
+                else {
+                    echo "A wizard's focus should be Intelligence.";
+                }
+                
             }
             
             
         ?>
+        </div>
         <br><br>
         <table id="tablehead" align="center">
             <tr>
