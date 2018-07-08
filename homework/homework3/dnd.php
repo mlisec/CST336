@@ -111,11 +111,14 @@
         
         <script>
             function myFunction() {
-                var x = document.getElementById("strength").value + document.getElementById("bonusStr").value;
-                if (x >= 20) {
-                    x = 20;
+                var x = document.getElementById("strength").value;
+                var y = document.getElementById("bonusStr");
+                var z = y.getElementsByTagName("td");
+                var actual = x + z;
+                if (z >= 20) {
+                    z = 20;
                 }
-                document.getElementById("demo").innerHTML = x;
+                document.getElementById("demo").innerHTML = z;
             }
         </script>
     </body>
