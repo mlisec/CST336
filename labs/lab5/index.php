@@ -6,17 +6,20 @@ include 'dbConnection.php';
 
 $conn = getDatabaseConnection("ottermart");
 
+
+
 function displayCategories() {
     global $conn;
     
-    $sql = "SELECT catID, catName from om_category ORDER BY catName";
+    $sql = "SELECT catId, catName from om_category ORDER BY catName";
     
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     foreach ($records as $record) {
-        echo "<option value='" . $record["catId"] . "' >" . $record["catName"] . "</option>";
+        
+        echo "<option value='".$record["catId"]."' >" . $record["catName"] . "</option>";
         
     }
 }
@@ -76,7 +79,9 @@ function displaySearchResults() {
         }
     }
 
-}
+} 
+
+
 
 ?>
 
@@ -94,7 +99,7 @@ function displaySearchResults() {
             
             <form>
                 
-                Product: <input type="text" name="product" />
+                Product: <input type="text" name="product">
                 <br>
                 Category:
                     <select name="category">
@@ -102,17 +107,17 @@ function displaySearchResults() {
                         <?=displayCategories()?>
                     </select>
                 <br>
-                Price: From <input type="text" name="priceFrom" size="7" />
-                       To   <input type="text" name="priceTo" size="7" />
+                Price: From <input type="text" name="priceFrom" size="7">
+                       To   <input type="text" name="priceTo" size="7">
                 <br>
-                Order result by:
-                <br>
+                Order result by: 
                 
-                <input type="radio" name="orderBy" value="price" /> Price <br>
-                <input type="radio" name="orderBy" value="name" /> Name
+                
+                <input type="radio" name="orderBy" value="price"> Price 
+                <input type="radio" name="orderBy" value="name"> Name
                 
                 <br /><br />
-                <input type="submit" value="Search" name="searchForm" />
+                <input type="submit" value="Search" name="searchForm">
                 
             </form>
             
