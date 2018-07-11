@@ -95,6 +95,8 @@ function displaySearchResults() {
     <body>
         
         <div>
+            
+            <img id="logo" src="img/logo.png" alt="Logo" />
             <h1> Ottermart Product Search </h1>
             
             <form>
