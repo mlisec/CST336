@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
     
@@ -9,7 +8,7 @@
     <body>
         
         <div>
-            <h1> Ottermar Product Search </h1>
+            <h1> Ottermart Product Search </h1>
             
             <form>
                 
