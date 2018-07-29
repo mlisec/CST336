@@ -124,7 +124,7 @@ function gameloop() {
             }
             //$("#output").html("sideHit = " + sideHit);
             pc.style.left = parseInt(pc.style.left) + 5 + 'px';
-            console.log(sideHit);
+            //console.log(sideHit);
 
 
             if (!sideHit) {
@@ -147,7 +147,7 @@ function gameloop() {
             }
             //$("#output").html("sideHit = " + sideHit);
             pc.style.left = parseInt(pc.style.left) - 5 + 'px';
-            console.log(sideHit);
+            //console.log(sideHit);
 
 
             if (!sideHit) {
@@ -248,7 +248,7 @@ function nextLevel() {
     platforms = new Array();
 
     if (level == 1) {
-        npc_prince.style.left = '750px';
+        npc_prince.style.left = '1500px';
         npc_prince.style.top = '340px';
 
         addPlatform(0, 380, 500, 20);
