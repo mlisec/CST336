@@ -27,7 +27,7 @@ function hittest(a, b, i) {
     if (aY1 > bY3 && aY3 > bY3) vOverlap = false;
 
 
-
+/*
     $("#output").html(
         "i = " + i + "<br>" +
         "aX1 < bX1 && aX2 < bX1 <br />" +
@@ -39,6 +39,7 @@ function hittest(a, b, i) {
         "aY1 > bY3 && aY3 > bY3 <br />" +
         aY1 + " > " + bY3 + " && " + aY3 + " > " + bY3 + "<br />"
     );
+*/
     if (hOverlap && vOverlap) return true;
     else return false;
 
@@ -47,7 +48,7 @@ function hittest(a, b, i) {
 
 var pc;
 var npc_prince;
-var output;
+//var output;
 var leftArrowDown = false;
 var rightArrowDown = false;
 var upArrowDown = false;
@@ -63,8 +64,8 @@ var lifebar;
 var numLives = 0;
 
 function init() {
-    output = document.getElementById('output');
-    output.innerHTML = level;
+    //output = document.getElementById('output');
+    //output.innerHTML = level;
 
     lifebar = document.getElementById('lifebar');
     for (var i = 0; i < 3; i++) {
@@ -72,24 +73,39 @@ function init() {
     }
 
     pc = document.getElementById('pc');
-    pc.style.width = '20px';
-    pc.style.height = '40px';
+    $("#pc").width('20px').height('40px');
+    //pc.style.width = '20px';
+    //pc.style.height = '40px';
 
     npc_prince = document.getElementById('npc_prince');
-    npc_prince.style.width = '20px';
-    npc_prince.style.height = '40px';
+    $("#npc_prince").width('20px').height('40px');
+    //npc_prince.style.width = '20px';
+    //npc_prince.style.height = '40px';
 
     nextLevel();
+    
+    $(document).on("keydown", function(event){
+	
+	if (event.keyCode == 37) leftArrowDown = true;
+    if (event.keyCode == 39) rightArrowDown = true;
+    if (event.keyCode == 38) upArrowDown = true;	
+	});
+	
+	$(document).on("keyup", function(event) {
+    if (event.keyCode == 37) leftArrowDown = false;
+    if (event.keyCode == 39) rightArrowDown = false;
+    if (event.keyCode == 38) upArrowDown = false;
+});
 }
 
 function addPlatform(x, y, w, h) {
     var p = document.createElement('DIV');
+    
     p.className = 'platform';
     p.style.left = x + 'px';
     p.style.top = y + 'px';
     p.style.width = w + 'px';
     p.style.height = h + 'px';
-
     platforms.push(p);
     gameWindow.appendChild(p);
 }
@@ -106,7 +122,7 @@ function gameloop() {
 
 
             }
-            $("#output").html("sideHit = " + sideHit);
+            //$("#output").html("sideHit = " + sideHit);
             pc.style.left = parseInt(pc.style.left) + 5 + 'px';
             console.log(sideHit);
 
@@ -129,7 +145,7 @@ function gameloop() {
                 sideHit = true;
 
             }
-            $("#output").html("sideHit = " + sideHit);
+            //$("#output").html("sideHit = " + sideHit);
             pc.style.left = parseInt(pc.style.left) - 5 + 'px';
             console.log(sideHit);
 
@@ -170,8 +186,10 @@ function gameloop() {
         clearInterval(gameTimer);
         alert('You saved the prince!');
         if (level == 3) {
-            gameWindow.innerHTML = '<br><br>You win!';
-            gameWindow.className = 'msgGameOver';
+        	$("#gameWindow").addClass('msgGameOver');
+    		$("#gameWindow").html("<br><br>You win!");
+            //gameWindow.innerHTML = '<br><br>You win!';
+            //gameWindow.className = 'msgGameOver';
         } else {
             document.getElementById('btnContinue').style.display = 'block';
         }
@@ -188,9 +206,10 @@ function gameloop() {
 
 function addLife() {
     numLives++;
-    var life = document.createElement('IMG');
-    life.src = 'heart.png';
-    lifebar.appendChild(life);
+    //var life = document.createElement('IMG');
+    //life.src = 'heart.png';
+    //lifebar.appendChild(life);
+    $("#lifebar").append('<img src="heart.png" />');
 }
 
 function removeLife() {
@@ -198,16 +217,22 @@ function removeLife() {
         numLives--;
         lifebar.removeChild(lifebar.lastChild);
     } else {
-        gameWindow.innerHTML = '<br><br>You lose!';
-        gameWindow.className = 'msgGameOver';
+    	$("#gameWindow").addClass('msgGameOver');
+    	$("#gameWindow").html("<br><br>You lose!");
+        //gameWindow.innerHTML = '<br><br>You lose!';
+        //gameWindow.className = 'msgGameOver';
+        
     }
 }
 
 function nextLevel() {
+	
+	$("#btnContinue").hide();
 
-    document.getElementById('btnContinue').style.display = 'none';
+    //document.getElementById('btnContinue').style.display = 'none';
     level++;
-    output.innerHTML = level;
+    $("#output").html("Level " + level);
+    //output.innerHTML = level;
 
     fallSpeed = 0;
     leftArrowDown = false;
@@ -239,6 +264,7 @@ function nextLevel() {
 
         addPlatform(0, 380, 250, 20);
         addPlatform(300, 380, 250, 20);
+        addPlatform(400, 300, 100, 100);
     } else if (level == 3) {
         npc_prince.style.left = '650px';
         npc_prince.style.top = '240px';
@@ -250,21 +276,21 @@ function nextLevel() {
     gameTimer = setInterval(gameloop, 50);
 
 }
-
+/*
 document.addEventListener('keydown', function(event) {
     if (event.keyCode == 37) leftArrowDown = true;
     if (event.keyCode == 39) rightArrowDown = true;
     if (event.keyCode == 38) upArrowDown = true;
 });
+*/
 
-/*$( "#gameWindow" ).keydown(function(event) {
-	if(event.which==37) leftArrowDown = true;
-	if(event.which==39) rightArrowDown = true;
-	if(event.which==38) upArrowDown = true;
-});*/
 
+
+
+/*
 document.addEventListener('keyup', function(event) {
     if (event.keyCode == 37) leftArrowDown = false;
     if (event.keyCode == 39) rightArrowDown = false;
     if (event.keyCode == 38) upArrowDown = false;
 });
+*/
