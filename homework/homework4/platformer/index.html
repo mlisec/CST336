@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Platformer</title>
+		<script src="myGameLibrary.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<style>
+			
+			@import url("styles.css");
+			
+		</style>
+
+		<script type="text/javascript">
+		
+			$( document ).ready(function() {
+			
+			init();
+			
+		});
+		</script>
+	</head>
+	<body>
+
+		<div id="gameWindow">
+			<div id="pc"></div>
+			<div id="npc_prince"></div>
+			<div id="lifebar"></div>
+			<div id="btnContinue" onclick="nextLevel();">CONTINUE</div>
+		</div>
+		<div id="output"></div>
+
+	</body>
+</html>
