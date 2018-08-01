@@ -10,6 +10,16 @@
     <input type="radio" name="question2" id="q2-2"  value="B"/><label for='q2-2'>Albus <br />
     <input type="radio" name="question2" id="q2-3"  Value="C"/><label for='q2-3'>Monte Rey <br />
     <div id="question2-feedback" class="answer"></div><br />
+    
+    <!--Question 3-->
+    What is 2 + 2?<br />
+    <input type="text" name="question3" size="5" />
+    <div id="question3-feedback" class="answer"></div><br />
+    
+    <!--Question 4-->
+    What is sqrt(16)?
+    <input type="text" name="question3" size="5" />
+    <div id="question4-feedback" class="answer"></div><br />
 
     <input type="submit" value="Submit" />
     

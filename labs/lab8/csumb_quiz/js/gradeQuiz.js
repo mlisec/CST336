@@ -13,9 +13,13 @@ $(document).ready(function(){
         //Get answers
         var answer1 = $("input[name='question1']").val().trim();
         var answer2 = $("input[name='question2']:checked").val();
+        var answer3 = $("input[name='question3']").val().trim();
+        var answer4 = $("input[name='question4']").val().trim();
         
         console.log(answer1);
         console.log(answer2);
+        console.log(answer3);
+        console.log(answer4);
         
         //Checks if answers are correct
         // Question 1
@@ -34,6 +38,24 @@ $(document).ready(function(){
             incorrectAnswer($("#question2-feedback"));
         }
         $("#question2-feedback").append("The answer is <strong Monte Rey</strong");
+        
+        // Question 3
+        if(answer1 === "2") {
+            correctAnswer($("#question3-feedback"));
+        } else {
+            incorrectAnswer($("#question3-feedback"));
+        }
+        
+        $("#question3-feedback").append("The answer is <strong>2</strong>");
+        
+        // Question 4
+        if(answer1 === "4") {
+            correctAnswer($("#question4-feedback"));
+        } else {
+            incorrectAnswer($("#question4-feedback"));
+        }
+        
+        $("#question4-feedback").append("The answer is <strong>4</strong>");
 
 
         //Displays quiz score

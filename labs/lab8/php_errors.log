@@ -63,3 +63,13 @@ Stack trace:
 #0 /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php(18): PDOStatement->execute(Array)
 #1 {main}
   thrown in /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php on line 18
+[01-Aug-2018 05:13:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: parameter was not defined' in /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php on line 18
+[01-Aug-2018 05:14:54 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY093]: Invalid parameter number: parameter was not defined' in /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php:18
+Stack trace:
+#0 /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php(18): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ubuntu/workspace/cst336/labs/lab8/csumb_quiz/verifyUser.php on line 18
