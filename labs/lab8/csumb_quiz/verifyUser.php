@@ -2,14 +2,18 @@
 session_start();
 
 include 'connect.php';
-$conn = getDBConnection();
+$connect = getDBConnection();
 
 //Checking credentials in database
 $sql = "SELECT * FROM users
         WHERE username = :username
         AND password = :passsword";
         
-$stmt = $conn->prepare($sql);
+//$data = array();
+//$data[":username"] = $_POST['username'];
+//$data[":password"] = sha1($_POST['password']);
+        
+$stmt = $connect->prepare($sql);
 $data = array(":username" => $_POST['username'], ":password" => sha1($_POST['password']));
 $stmt->execute($data);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);

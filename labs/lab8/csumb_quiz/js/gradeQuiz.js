@@ -44,12 +44,17 @@ $(document).ready(function(){
 
         //Submits and stores score, retrieves average score
         $.ajax({
-            type : "",
-            url  : "",            
-            dataType : "",
-            data : {"" : },            
+            type : "post",
+            url  : "submitScores.php",            
+            dataType : "json",
+            data : {"score" : score},            
             success : function(data){
-                console.log(data);
+                //console.log(data);
+                $("#times").html(data.times);
+                $("#average").html(data.average);
+                $("#feedback").css("display", "block");
+                $("#waiting").html("");
+                $("#input[type='submit']").css("display", "");
                 
             },
             complete: function(data,status) { //optional, used for debugging purposes
