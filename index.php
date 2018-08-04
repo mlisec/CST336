@@ -38,7 +38,7 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 <br>
 
-<a href="labs/lab8/csumb_quiz/login.php">Lab 8</a>
+<a href="labs/lab8/csumb_quiz/index.php">Lab 8</a>
 
 <br><br>
 
