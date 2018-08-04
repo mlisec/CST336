@@ -18,7 +18,7 @@
     
     <!--Question 4-->
     What is sqrt(16)?
-    <input type="text" name="question3" size="5" />
+    <input type="text" name="question4" size="5" />
     <div id="question4-feedback" class="answer"></div><br />
 
     <input type="submit" value="Submit" />

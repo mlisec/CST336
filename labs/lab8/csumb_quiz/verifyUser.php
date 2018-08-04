@@ -9,9 +9,8 @@ $sql = "SELECT * FROM users
         WHERE username = :username
         AND password = :passsword";
         
-//$data = array();
-//$data[":username"] = $_POST['username'];
-//$data[":password"] = sha1($_POST['password']);
+$username = $_POST['username'];
+$password = $_POST['password'];
         
 $stmt = $connect->prepare($sql);
 $data = array(":username" => $_POST['username'], ":password" => sha1($_POST['password']));
