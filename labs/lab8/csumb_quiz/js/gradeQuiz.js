@@ -40,7 +40,7 @@ $(document).ready(function(){
         $("#question2-feedback").append("The answer is <strong Monte Rey</strong");
         
         // Question 3
-        if(answer1 === "2") {
+        if(answer3 === "4") {
             correctAnswer($("#question3-feedback"));
         } else {
             incorrectAnswer($("#question3-feedback"));
@@ -49,7 +49,7 @@ $(document).ready(function(){
         $("#question3-feedback").append("The answer is <strong>2</strong>");
         
         // Question 4
-        if(answer1 === "4") {
+        if(answer4 === "4") {
             correctAnswer($("#question4-feedback"));
         } else {
             incorrectAnswer($("#question4-feedback"));
