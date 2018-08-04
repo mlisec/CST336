@@ -7,7 +7,7 @@ $connect = getDBConnection();
 //Checking credentials in database
 $sql = "SELECT * FROM users
         WHERE username = :username
-        AND password = :passsword";
+        AND password = :password";
         
 $username = $_POST['username'];
 $password = $_POST['password'];
