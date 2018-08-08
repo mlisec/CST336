@@ -3,6 +3,22 @@
     include "dbConnection.php";
     $conn = getDatabaseConnection('final_project');
     
+    if(isset($_GET['directorId'])) {
+        
+        $directorId = $_GET['directorId'];
+    
+        $sql = "SELECT * FROM movie
+                JOIN director ON movie.directorId = director.directorId
+                WHERE director.directorId = $directorId";
+
+          $stmt = $conn->prepare($sql);
+          $stmt->execute();
+          $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+          echo json_encode($records);
+
+    }
+    
     if(isset($_POST['getDirectorData'])) {
           $sql = "SELECT * FROM director WHERE directorId = " . $_POST['directorId'];
           $stmt = $conn->prepare($sql);

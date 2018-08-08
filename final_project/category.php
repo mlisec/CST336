@@ -3,6 +3,22 @@
     include "dbConnection.php";
     $conn = getDatabaseConnection('final_project');
     
+    if(isset($_GET['catId'])) {
+        
+        $catId = $_GET['catId'];
+    
+        $sql = "SELECT * FROM movie
+                JOIN category ON movie.catId = category.catId
+                WHERE category.catId = $catId";
+
+          $stmt = $conn->prepare($sql);
+          $stmt->execute();
+          $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+          echo json_encode($records);
+
+    }
+    
     if(isset($_POST['getCategoryData'])) {
           $sql = "SELECT * FROM category WHERE catId = " . $_POST['categoryId'];
           $stmt = $conn->prepare($sql);

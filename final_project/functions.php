@@ -20,7 +20,7 @@ function displayCart() {
             // Display data for item
             echo "<td><img src='" . $item['img'] . "'></td>";
             echo "<td><h4>" . $item['name'] . "</h4></td>";
-            echo "<td><h4>" . $item['price'] . "</h4></td>";
+            echo "<td><h4>" . number_format($item['price'], 2, ".", ",") . "</h4></td>";
             
             // Update form for this item
             echo '<form method="post">';
@@ -37,8 +37,8 @@ function displayCart() {
 
             echo '</tr>';
         }
-        $tax = ($total + $shipping) / 100 * $tax;
-        $total = $total + $tax;
+        $tax = number_format((($total + $shipping) / 100 * $tax), 2, ".", ",");
+        $total = number_format($total + $tax, 2, ".", ",");
         
         echo "<tr>
               <td></td>
@@ -66,7 +66,7 @@ function displayResults() {
         foreach ($items as $item) {
             $itemName = $item['movieName'];
             $itemDescription = $item['movieDescription'];
-            $itemPrice = $item['price'];
+            $itemPrice = number_format($item['price'], 2, ".", ",");
             $itemImage = $item['movieImage'];
             $itemId = $item['movieId'];
             $itemDirector = $item['directorName'];

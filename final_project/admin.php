@@ -218,6 +218,59 @@
               }); 
             });
             
+            $('.check-category-button').click(function(){
+            
+              var catId = $(this).val();
+              $.get(`./category.php?catId=${catId}`, (res) => {
+                
+                var movies = JSON.parse(res);
+                
+                $('#showMovieInCategory').modal('show');
+                $('#movieInCategoryList').empty();
+                
+                var list = document.createElement('ul');
+                
+                movies.map((movie_data) => {
+                  var item = document.createElement('li');
+            
+                    // Set its contents:
+                    item.appendChild(document.createTextNode(movie_data.movieName));
+            
+                    // Add it to the list:
+                    list.appendChild(item);
+                });
+
+                $('#movieInCategoryList').append(list);
+              });
+            });
+            
+            $('.display-director-button').click(function(){
+            
+              var directorId = $(this).val();
+              $.get(`./director.php?directorId=${directorId}`, (res) => {
+                
+                var movies = JSON.parse(res);
+                
+                $('#showMovieInDirector').modal('show');
+                $('#movieInDirectorList').empty();
+                
+                var list = document.createElement('ul');
+                
+                movies.map((movie_data) => {
+                  var item = document.createElement('li');
+            
+                    // Set its contents:
+                    item.appendChild(document.createTextNode(movie_data.movieName));
+            
+                    // Add it to the list:
+                    list.appendChild(item);
+                });
+
+                $('#movieInDirectorList').append(list);
+              });
+            });
+            
+            
             
           });
           
@@ -269,7 +322,7 @@
                   echo "<td>" . $record['catId'] . "</td>";
                   echo "<td>" . $record['catName'] . "</td>";
                   echo "<td>" . $record['catDescription'] . "</td>";
-                  echo "<td><button class='btn btn-success check-category-button' value=". $record['catId'] .">Check Total Movie</a></td>";
+                  echo "<td><button class='btn btn-success check-category-button' value=". $record['catId'] .">Movie in this category</a></td>";
                   echo "<td><button class='btn btn-primary update-category-button' value=". $record['catId'] .">Update</a></td>";
                   echo "<td><button class= 'btn btn-danger delete-category-button' value=". $record['catId'] .">Delete</button></td>";
               }
@@ -336,6 +389,27 @@
                 </div>
               </div>
             </div>
+            
+            <!-- Show all movie in Category Modal -->
+            <div class="modal fade" id="showMovieInCategory" tabindex="-1" role="dialog" aria-labelledby="showMovieInCategory" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">All Movies in Category</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <ul id="movieInCategoryList">
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
              
              
              
@@ -354,6 +428,7 @@
                       <tr>
                           <th scope='col'>ID</th>
                           <th scope='col'>Director Name</th>
+                          <th scope='col'>Movie Directed</th>
                           <th scope='col'>Update</th>
                           <th scope='col'>Remove</th>
                       </tr>
@@ -365,6 +440,7 @@
                   echo "<tr>";
                   echo "<td>" . $record['directorId'] . "</td>";
                   echo "<td>" . $record['directorName'] . "</td>";
+                  echo "<td><button class='btn btn-success display-director-button' value=". $record['directorId'] .">Show</a></td>";
                   echo "<td><button class='btn btn-primary update-director-button' value=". $record['directorId'] .">Update</a></td>";
                   echo "<td><button class= 'btn btn-danger delete-director-button' value=". $record['directorId'] .">Delete</button></td>";
               }
@@ -426,6 +502,27 @@
               </div>
             </div>
             
+            <!-- Show all movies director direct Modal -->
+            <div class="modal fade" id="showMovieInDirector" tabindex="-1" role="dialog" aria-labelledby="showMovieInDirector" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">All Movies Director Direct</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <ul id="movieInDirectorList">
+                        
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             
               
           </div>
@@ -434,6 +531,10 @@
               <!-- Button trigger director modal -->
             <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#movieModal">
               Add Movie
+            </button>
+            
+            <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#averagePriceModal">
+              Show Average Price
             </button>
             
             <?php
@@ -625,6 +726,37 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button id="editMovieSubmit" type="button" class="btn btn-primary">Submit</button>
                   </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <!-- Avg Price Modal -->
+            <div class="modal fade" id="averagePriceModal" tabindex="-1" role="dialog" aria-labelledby="averagePriceModal" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Average Price for all Movie</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <?php
+                      $records = displayAllMovies();
+                      $total = 0;
+                      forEach($records as $record) {
+                        $total += $record['price'];
+                      }
+                      
+                      $final_avg = number_format($total / count($records), 2, ".", ",");
+                      
+                      echo "<h1>$$final_avg</h1>";
+                    
+                    ?>
+                      
+                  </div>
+                
                 </div>
               </div>
             </div>
