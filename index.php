@@ -46,6 +46,10 @@ echo "Matthew Lisec's CST336 Online Programming";
 
 <br>
 
+<a href="homework/homework1/index.php">Homework 1</a>
+
+<br>
+
 <a href="homework/homework2/pokemonTeam.php">Homework 2</a>
 
 <br>
